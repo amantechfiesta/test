@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
+    "@ai-sdk/react": "latest",
     "ai": "latest",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.2",
