@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useChat } from 'ai/react';
+// CHANGED: Import useChat from the new package
+import { useChat } from '@ai-sdk/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Wallet, ScanLine, MapPin, AlertTriangle, CheckCircle, Send } from 'lucide-react';
 
@@ -130,6 +131,34 @@ export default function FinMateDashboard() {
             >
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
                 <ScanLine className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Processing Receipt...</h3>
+              <p className="text-gray-500 text-sm mb-6">Simulating OCR analysis for split bill...</p>
+              
+              <div className="space-y-3">
+                 <div className="flex justify-between text-sm border-b pb-2">
+                    <span>Pizza</span>
+                    <span className="font-mono">$20.00</span>
+                 </div>
+                 <div className="flex justify-between text-sm border-b pb-2">
+                    <span>Coke</span>
+                    <span className="font-mono">$5.00</span>
+                 </div>
+              </div>
+
+              <button 
+                onClick={() => setScannerOpen(false)}
+                className="mt-6 w-full bg-blue-600 text-white py-3 rounded-xl font-bold"
+              >
+                Add to Expenses
+              </button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
               </div>
               <h3 className="text-xl font-bold mb-2">Processing Receipt...</h3>
               <p className="text-gray-500 text-sm mb-6">Simulating OCR analysis for split bill...</p>
